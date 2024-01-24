@@ -1,19 +1,24 @@
 <script>
 	import Header from './Header.svelte';
 	import './styles.css';
+	// https://inlang.com/m/dxnzrydw/library-inlang-paraglideJsAdapterSvelteKit
+  import { ParaglideJS } from '@inlang/paraglide-js-adapter-sveltekit'
+	import { i18n } from '$lib/i18n'
 </script>
 
-<div class="app">
-	<Header />
+<ParaglideJS {i18n}>
+	<div class="app">
+		<Header />
 
-	<main>
-		<slot />
-	</main>
+		<main>
+			<slot />
+		</main>
 
-	<footer>
-		<p>visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to learn SvelteKit</p>
-	</footer>
-</div>
+		<footer>
+			<p>visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to learn SvelteKit</p>
+		</footer>
+	</div>
+</ParaglideJS>
 
 <style>
 	.app {
